@@ -1,0 +1,21 @@
+# simulation
+gui: false
+total_episodes: 500
+max_steps: 5400
+n_cars_generated: 1000
+green_duration: 10
+yellow_duration: 4
+turn_chance: 0.25
+# model / agent
+num_layers: 2 # Enable LSTM with 2 layers
+width_layers: 256 # Increased for better capacity
+batch_size: 0 # not used in on-policy update
+learning_rate: 0.0001 # Lower for stability
+training_epochs: 1 # single update per episode
+# agent
+gamma: 0.95
+beta_entropy: 0.02 # Increased for more exploration
+lambda_gae: 0.95
+n_step_size: 32  # Add this line (adjust as needed; e.g., 32 for n-step returns)
+# paths
+sumocfg_file: intersection/sumo_config.sumocfg
